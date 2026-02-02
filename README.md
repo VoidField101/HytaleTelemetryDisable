@@ -19,3 +19,13 @@ Note that to be effective frita should be up at most 1.5 seconds after the proce
 As long as the function itself doesn't change too much this method of obtaining the address should be relatively stable. For Pre-Release v2026.01.29-301e13929 this method gave address `0x133acc0`.
 
 If there is no output ``Telemetry function was blocked!`` the address is likely too low; if it does appear and immedatly crash afterwards it's likely a bit too high.
+
+## DNS block/redirect?
+
+While it is the safest option the log files get cluttered with stack traces of failing telemetry calls which also blow up the size of log files quite a bit.
+
+
+For DNS blocking simply add ``0.0.0.0 telemetry.hytale.com sentry.hytale.com`` to your ``/etc/hosts`` instead and you are good to go.
+
+
+Alternatively you can add those two domains to your favorite DNS blocker (AdGuard, Pi-Hole etc.).
